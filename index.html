@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Black Scorpion | Program Pembinaan Pelatihan Unggulan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-core">
+            <div class="radar-sweep"></div>
+            <div class="loader-text glitch-effect" data-text="MEMUAT SISTEM...">MEMUAT SISTEM...</div>
+        </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="brand-logo">
+                <i class="fas fa-crosshairs"></i> BLACK<span>SCORPION</span>
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+            </div>
+
+            <ul class="nav-list" id="nav-list">
+                <li><a href="#home" class="nav-item active">Utama</a></li>
+                <li><a href="#about" class="nav-item">Profil</a></li>
+                <li><a href="#fasilitas" class="nav-item">Fasilitas</a></li>
+                <li><a href="#materi" class="nav-item">Kurikulum</a></li>
+                <li><a href="#paket" class="nav-item">Pendaftaran</a></li>
+                <li><a href="#contact" class="btn-daftar-nav">BERGABUNG</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-vignette"></div>
+        <div class="container hero-layout">
+            <div class="hero-content">
+                <div class="status-badge reveal-item">PENERIMAAN SISWA BARU DIBUKA</div>
+                <h1 class="hero-title reveal-item" style="transition-delay: 0.2s;">
+                    PROGRAM PEMBINAAN <br>
+                    <span class="text-gold type-effect">PELATIHAN UNGGULAN</span>
+                </h1>
+                <p class="hero-desc reveal-item" style="transition-delay: 0.4s;">
+                    Wujudkan mimpi menjadi Abdi Negara. Persiapan seleksi terpadu untuk TNI, POLRI, SEKOLAH KEDINASAN, dan ASN dengan standar pelatihan semi-militer tingkat tinggi.
+                </p>
+                <div class="hero-buttons reveal-item" style="transition-delay: 0.6s;">
+                    <a href="#paket" class="btn-solid-gold">LIHAT PAKET <i class="fas fa-arrow-right"></i></a>
+                    <a href="#materi" class="btn-outline-gold">PELAJARI MATERI</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual reveal-item" style="transition-delay: 0.8s;">
+                <div class="stats-box">
+                    <div class="stat-row">
+                        <i class="fas fa-calendar-alt text-gold"></i>
+                        <div>
+                            <h4>PROGRAM INTENSIF</h4>
+                            <p>3 Bulan Penuh</p>
+                        </div>
+                    </div>
+                    <div class="stat-row">
+                        <i class="fas fa-dumbbell text-gold"></i>
+                        <div>
+                            <h4>FOKUS PELATIHAN</h4>
+                            <p>Jasmani dan Akademik</p>
+                        </div>
+                    </div>
+                    <div class="stat-row">
+                        <i class="fas fa-laptop-code text-gold"></i>
+                        <div>
+                            <h4>SISTEM UJIAN</h4>
+                            <p>Computer Assisted Test</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down-hint">
+            <div class="mouse-icon"><div class="scroll-wheel"></div></div>
+            <span>GULIR KE BAWAH</span>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal-item">
+                <h2>IDENTITAS <span>KAMI</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">Membangun karakter dan intelektualitas generasi muda Subang.</p>
+            </div>
+
+            <div class="grid-about">
+                <div class="about-card glass-panel reveal-item">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3>VISI UTAMA</h3>
+                    <p>Menjadi pusat pelatihan semi-militer swasta terdepan yang mencetak generasi muda Subang, unggul, disiplin, intelektual bersaing di kancah Nasional.</p>
+                </div>
+                <div class="about-card glass-panel reveal-item" style="transition-delay: 0.2s;">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>MISI STRATEGIS</h3>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Menyelenggarakan Pembinaan berstandar TNI-POLRI.</li>
+                        <li><i class="fas fa-check"></i> Memberikan bimbingan akademik dan psikologi komprehensif.</li>
+                        <li><i class="fas fa-check"></i> Membangun karakter disiplin dan mentalitas juara.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fasilitas" class="section-padding bg-darker">
+        <div class="container">
+            <div class="section-header reveal-item">
+                <h2>FASILITAS <span>PELATIHAN</span></h2>
+                <div class="accent-line mx-0"></div>
+                <p class="section-subtitle">Didukung oleh infrastruktur Batalyon 312 Kala Hitam.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item reveal-item">
+                    <div class="gallery-overlay">
+                        <h4>Trek Lari Standar</h4>
+                        <p>Untuk Samapta A 12 Menit</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal-item" style="transition-delay: 0.2s;">
+                    <div class="gallery-overlay">
+                        <h4>Laboratorium CAT</h4>
+                        <p>Simulasi Ujian Akademik & TKD</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal-item" style="transition-delay: 0.4s;">
+                    <div class="gallery-overlay">
+                        <h4>Kolam Renang Militer</h4>
+                        <p>Latihan Renang Samapta C</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal-item" style="transition-delay: 0.6s;">
+                    <div class="gallery-overlay">
+                        <h4>Area Calisthenics</h4>
+                        <p>Pull Up, Push Up, dan Sit Up</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="materi" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal-item">
+                <h2>KURIKULUM <span>MATERI</span></h2>
+                <div class="accent-line"></div>
+            </div>
+
+            <div class="tab-system reveal-item">
+                <div class="tab-controls">
+                    <button class="tab-btn active" data-target="tab-1">JASMANI</button>
+                    <button class="tab-btn" data-target="tab-2">AKADEMIK</button>
+                    <button class="tab-btn" data-target="tab-3">EVALUASI</button>
+                </div>
+
+                <div class="tab-body active" id="tab-1">
+                    <div class="tab-grid">
+                        <div class="tab-desc">
+                            <h3 class="text-gold">Kesamaptaan Fisik Total</h3>
+                            <p>Pelatihan fisik intensif yang dirancang untuk melampaui standar minimal seleksi.</p>
+                            <div class="tag-cloud">
+                                <span>Samapta A - Lari 12 Menit</span>
+                                <span>Samapta B - Push Up</span>
+                                <span>Samapta B - Sit Up</span>
+                                <span>Samapta B - Pull Up</span>
+                                <span>Samapta B - Shuttle Run</span>
+                                <span>Samapta C - Renang</span>
+                            </div>
+                        </div>
+                        <div class="tab-icon-large"><i class="fas fa-running"></i></div>
+                    </div>
+                </div>
+
+                <div class="tab-body" id="tab-2">
+                    <div class="tab-grid">
+                        <div class="tab-desc">
+                            <h3 class="text-gold">Kecerdasan & Psikologi</h3>
+                            <p>Pematangan materi ujian tertulis untuk memastikan nilai ambang batas terlampaui dengan mudah.</p>
+                            <ul class="check-list mt-20">
+                                <li><i class="fas fa-brain"></i> Wawasan Kebangsaan</li>
+                                <li><i class="fas fa-brain"></i> Bahasa Inggris & Bahasa Indonesia</li>
+                                <li><i class="fas fa-brain"></i> Matematika</li>
+                                <li><i class="fas fa-brain"></i> Tes Intelegensia Umum TIU</li>
+                            </ul>
+                        </div>
+                        <div class="tab-icon-large"><i class="fas fa-book-reader"></i></div>
+                    </div>
+                </div>
+
+                <div class="tab-body" id="tab-3">
+                    <div class="tab-grid">
+                        <div class="tab-desc">
+                            <h3 class="text-gold">Simulasi Ujian Rutin</h3>
+                            <p>Pelaksanaan evaluasi setiap bulan untuk memetakan progres dan kesiapan mental siswa.</p>
+                            <ul class="check-list mt-20">
+                                <li><i class="fas fa-chart-line"></i> Simulasi Samapta A, B, dan C</li>
+                                <li><i class="fas fa-chart-line"></i> Tes Psikologi Lanjutan</li>
+                                <li><i class="fas fa-chart-line"></i> Tes Kemampuan Dasar TKD via CAT</li>
+                            </ul>
+                        </div>
+                        <div class="tab-icon-large"><i class="fas fa-desktop"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="paket" class="section-padding bg-darker">
+        <div class="container">
+            <div class="section-header text-center reveal-item">
+                <h2>PROGRAM PELATIHAN <span>3 BULAN</span></h2>
+                <div class="accent-line"></div>
+                <div class="fee-badge">BIAYA PENDAFTARAN : RP 500.000</div>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-box glass-panel reveal-item">
+                    <div class="price-head">
+                        <h4>PAKET JASMANI</h4>
+                        <div class="price-amount"><span>Rp</span> 5.500.000</div>
+                    </div>
+                    <ul class="price-features">
+                        <li>Lari 12 Menit</li>
+                        <li>Push Up & Sit Up</li>
+                        <li>Pull Up / Chinning</li>
+                        <li>Shuttle Run</li>
+                        <li>Renang</li>
+                    </ul>
+                    <button class="btn-price-action order-wa" data-item="Paket Jasmani">PILIH PAKET</button>
+                </div>
+
+                <div class="price-box glass-panel premium-box reveal-item" style="transition-delay: 0.2s;">
+                    <div class="best-seller-tag">PALING DIMINATI</div>
+                    <div class="price-head">
+                        <h4 class="text-gold">PAKET REGULER</h4>
+                        <div class="price-amount text-gold"><span>Rp</span> 12.500.000</div>
+                    </div>
+                    <ul class="price-features">
+                        <li>Kesamaptaan Jasmani Lengkap</li>
+                        <li>Pembinaan Akademik</li>
+                        <li>Bimbingan Psikologi</li>
+                        <li>Simulasi Tes CAT Berkala</li>
+                        <li>Evaluasi Progres Bulanan</li>
+                    </ul>
+                    <button class="btn-price-action active order-wa" data-item="Paket Reguler">DAFTAR SEKARANG</button>
+                </div>
+
+                <div class="price-box glass-panel reveal-item" style="transition-delay: 0.4s;">
+                    <div class="price-head">
+                        <h4>PAKET AKADEMIK</h4>
+                        <div class="price-amount"><span>Rp</span> 6.500.000</div>
+                    </div>
+                    <ul class="price-features">
+                        <li>Psikologi</li>
+                        <li>Wawasan Kebangsaan</li>
+                        <li>Bahasa Inggris & Indonesia</li>
+                        <li>Matematika</li>
+                        <li>Tes CAT Computer Assisted Test</li>
+                    </ul>
+                    <button class="btn-price-action order-wa" data-item="Paket Akademik">PILIH PAKET</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer-area">
+        <div class="container">
+            <div class="footer-layout">
+                <div class="footer-info">
+                    <a href="#" class="brand-logo footer-logo">
+                        <i class="fas fa-crosshairs"></i> BLACK<span>SCORPION</span>
+                    </a>
+                    <p class="footer-desc">Pusat pelatihan semi-militer swasta terdepan. Wujudkan mimpi Anda menjadi pahlawan bangsa.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <p class="social-tag">@binlat.blackscorpion</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>TEMPAT</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt text-gold"></i>
+                            <span>Batalyon 312 Kala Hitam.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-building text-gold"></i>
+                            <span>Managed by CV Kala Cendekia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt text-gold"></i>
+                            <span>0823-1904-7065</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 BLACK SCORPION BINLAT. Hak Cipta Dilindungi.</p>
+                <p class="motto text-gold">CV KALA CENDEKIA - DISIPLIN, TERLATIH, MENANG.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="float-wa" class="float-btn wa-color">
+        <i class="fab fa-whatsapp"></i>
+        <span class="pulse-ring"></span>
+    </button>
+    <button id="float-top" class="float-btn top-color">
+        <i class="fas fa-angle-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
