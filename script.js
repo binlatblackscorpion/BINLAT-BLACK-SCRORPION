@@ -163,44 +163,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const visitorCountEl = document.getElementById('visitor-count');
 
     if (visitorCountEl) {
-        // Base logic for realistic starting point and incrementing
+        // Ambil data dari local storage
         let currentCount = localStorage.getItem('blackscorpion_visitor_count');
-
-        // If it doesn't exist, start from a realistic base number (or 0 as requested, but starting at 0 looks empty, we will simulate starting from 0 and counting up fast to the real number, OR literally just increment from 0).
-        // Since user said "mulai dari 0 ya", we will literally set it to 0 initially if first time.
-        if (!currentCount) {
+        currentCount = parseInt(currentCount);
+        
+        if (isNaN(currentCount)) {
             currentCount = 0;
-            localStorage.setItem('blackscorpion_visitor_count', currentCount);
         }
 
-        // Increment by 1 for this visit session
-        // Check if already visited this session to prevent spam reload counting
-        if (!sessionStorage.getItem('visited')) {
-            currentCount = parseInt(currentCount) + 1;
-            localStorage.setItem('blackscorpion_visitor_count', currentCount);
-            sessionStorage.setItem('visited', 'true');
-        }
+        // Tambah pengunjung setiap kali direfresh agar fungsi 'berjalan' terlihat jelas
+        currentCount++;
+        localStorage.setItem('blackscorpion_visitor_count', currentCount);
 
-        // Function to animate the counter from 0 to the currentCount
+        // Pastikan angka awal adalah 0 sebelum animasi dimulai
+        visitorCountEl.innerHTML = "0";
+
         function animateValue(obj, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                // add ease-out effect
-                const easeOutQuad = 1 - (1 - progress) * (1 - progress);
-                obj.innerHTML = Math.floor(easeOutQuad * (end - start) + start).toLocaleString('id-ID');
+                
+                // Gunakan ease-out
+                const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const currentVal = Math.floor(easeOut * (end - start) + start);
+                
+                obj.innerHTML = currentVal.toLocaleString('id-ID');
+                
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
+                } else {
+                    obj.innerHTML = end.toLocaleString('id-ID'); // Pastikan angka final presisi
                 }
             };
             window.requestAnimationFrame(step);
         }
 
-        // Delay the counter animation slightly until page is ready
+        // Jalankan animasi sedikit lebih cepat
         setTimeout(() => {
-            animateValue(visitorCountEl, 0, parseInt(currentCount), 2000);
-        }, 1500);
+            // Jika angkanya kecil, animasi dipercepat agar tidak terasa nyangkut
+            const animDuration = currentCount < 10 ? 600 : 1500;
+            animateValue(visitorCountEl, 0, currentCount, animDuration);
+        }, 800);
     }
 
     /* ======================================================================
